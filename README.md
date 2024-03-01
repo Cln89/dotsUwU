@@ -2,6 +2,7 @@
 
 #Fixing unable to import GPG:
 `~/.gnupg/gpg.conf`
+
 no-greeting
 no-permission-warning
 lock-never
