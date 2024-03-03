@@ -8,8 +8,8 @@
     "height": 40,
     "modules-left": [
         "custom/launch_wofi",
-        //  "wlr/workspaces",
-        "cpu","memory","disk",
+        "hyprland/workspaces",
+        "cpu","memory","disk","temperature",
         "hyprland/window"
     ],
     "modules-center": [
@@ -19,10 +19,9 @@
         "custom/power_btn"
     ],
     "modules-right": [
-        "temperature",
         "custom/power_profile",
         "battery",
-        // "backlight",
+        "backlight",
         "pulseaudio",
         "pulseaudio#microphone",
         "tray",
@@ -93,22 +92,46 @@
         "tooltip": true
     },
     
-    "wlr/workspaces": {
-    	"format": "{icon}",
-        "disable-scroll": true,
-        "all-outputs": true,
-        "on-click": "activate",
+    // "wlr/workspaces": {
+    // 	"format": "{icon}",
+    //     "disable-scroll": true,
+    //     "all-outputs": true,
+    //     "on-click": "activate",
+    //     "persistent_workspaces": {
+    //         "1": [],
+    //         "2": [],
+    //         "3": [],
+    //         "4": [],
+    //         "5": [],
+    //         "6": [],
+    //         "7": [],
+    //         "8": [],
+    //         "9": [],
+    //         "10": []
+    //     }
+    // },
+    "hyprland/workspaces": {
         "persistent_workspaces": {
-            "1": [],
-            "2": [],
-            "3": [],
-            "4": [],
-            "5": [],
-            "6": [],
-            "7": [],
-            "8": [],
-            "9": [],
-            "10": []
+			"1": [],
+			"2": []
+		},
+        "format": "{icon}",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1",
+        "on-click": "activate",
+        "format-icons": {
+            "1": "",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
+            "6": "",
+            "7": "",
+            "8": "",
+            "9": "",
+            "urgent": "",
+            "active": "",
+            "default": ""
         }
     },
 
@@ -135,15 +158,15 @@
     "backlight": {
         "device": "intel_backlight",
         "format": "{icon} {percent}%",
-        "format-icons": ["", "", ""],
-        "on-scroll-up": "brightnessctl set 1%+",
-        "on-scroll-down": "brightnessctl set 1%-",
+        "format-icons": ["󰃞", "󰃟", "󰃠"],
+        "on-scroll-up": "brightnessctl set 1%-",
+        "on-scroll-down": "brightnessctl set 1%+",
         "min-length": 6
     },
 
     "battery": {
         "states": {
-            "good": 95,
+            "good": 80,
             "warning": 30,
             "critical": 20
         },
@@ -151,7 +174,7 @@
         "format-charging": " {capacity}%",
         "format-plugged": " {capacity}%",
         "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", "", "", ""]
+        "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
 
     "pulseaudio": {

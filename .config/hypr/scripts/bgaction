@@ -1,30 +1,31 @@
 #!/usr/bin/bash
 
 #start swwww
-swww query || swww init
+# swww query || swww init
+hyprpaper
 
 #figure out which waybar theme is set
 THEMEIS=$(readlink -f ~/.config/waybar/style.css | cut -d '-' -f2)
 
-DARK_FILENAME="wallpaper-dark"
-LIGHT_FILENAME="wallpaper"
+# DARK_FILENAME="wallpaper-dark"
+# LIGHT_FILENAME="wallpaper"
 
 #show the correct wallpaper based on the theme
-if [ $THEMEIS == "dark.css" ]; then
-    for i in `find ../wallpapeurs -type f -name "$DARK_FILENAME.png" -o -name "$DARK_FILENAME.gif" -o -name "$DARK_FILENAME.jpeg" -o -name "$DARK_FILENAME.jpg" -o -name "$DARK_FILENAME.webp" -o -name "$DARK_FILENAME.avif"`;
-    do
-        SWAPTO=$i
-    done
-    # swww img ~/.config/hypr/wallpaper-dark.jpeg
-else
-    for i in `find ..wallpapeurs -type f -name "$LIGHT_FILENAME.png" -o -name "$LIGHT_FILENAME.gif" -o -name "$LIGHT_FILENAME.jpeg" -o -name "$LIGHT_FILENAME.jpg" -o -name "$LIGHT_FILENAME.webp" -o -name "$LIGHT_FILENAME.avif"`;
-    do
-        SWAPTO=$i
-    done
-    # swww img ~/.config/hypr/wallpaper.jpeg
-fi
+# if [ $THEMEIS == "dark.css" ]; then
+#     for i in `find ../wallpapeurs -type f -maxdepth 1 -name "$DARK_FILENAME.png" -o -name "$DARK_FILENAME.gif" -o -name "$DARK_FILENAME.jpeg" -o -name "$DARK_FILENAME.jpg" -o -name "$DARK_FILENAME.webp" -o -name "$DARK_FILENAME.avif"`;
+#     do  
+#         SWAPTO=$i
+#     done
+#     # swww img ~/.config/hypr/wallpaper-dark.jpeg
+# else
+#     for i in `find ..wallpapeurs -type f -maxdepth 1 -name "$LIGHT_FILENAME.png" -o -name "$LIGHT_FILENAME.gif" -o -name "$LIGHT_FILENAME.jpeg" -o -name "$LIGHT_FILENAME.jpg" -o -name "$LIGHT_FILENAME.webp" -o -name "$LIGHT_FILENAME.avif"`;
+#     do
+#         SWAPTO=$i
+#     done
+#     # swww img ~/.config/hypr/wallpaper.jpeg
+# fi
 
-if [ $SWAPTO ]; then
-    swww img $SWAPTO
-fi
+# if [ $SWAPTO ]; then
+#     swww img $SWAPTO
+# fi
 

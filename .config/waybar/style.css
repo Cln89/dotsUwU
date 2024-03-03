@@ -81,29 +81,34 @@ tooltip label{
 #workspaces,
 #backlight {
     background: #1e1e2e;
-    opacity: 0.8;
+    opacity: 0.75;
     padding: 0px 10px;
     margin: 3px 0px;
-    margin-top: 5px;
+    margin-top: 2px;
     border: 0px;
 }
 
 #tray, 
 #custom-lock_screen, 
-#temperature, 
-/* #backlight,  */
+/* #temperature,  */
+#battery, 
 /* #custom-launch_wofi,  */
+#pulseaudio,
 #cpu {
     border-radius: 10px 0px 0px 10px;
 }
 
 #custom-light_dark, 
 #custom-power_btn, 
-#workspaces, 
 #pulseaudio.microphone, 
-#battery, 
-#disk {
+#backlight, 
+#temperature {
     border-radius: 0px 10px 10px 0px;
+    margin-right: 10px;
+}
+
+#workspaces {
+    border-radius: 10px;
     margin-right: 10px;
 }
 
@@ -119,7 +124,7 @@ tooltip label{
 
 #workspaces {
     padding-right: 0px;
-    padding-left: 5px;
+    padding-left: 0px;
 }
 /* 
 #custom-power_profile {
@@ -144,19 +149,43 @@ tooltip label{
     /* border-right: 10px; */
 }
 
-#pulseaudio {
-    color: #89b4fa;
+#battery {
+    color: #a6e3a1;
     border-left: 0px;
-    border-right: 0px;
 }
 
-#pulseaudio.microphone {
+#cpu {
+    color: #f38ba8;
+}
+
+#memory {
+    color: #fab387;
+}
+
+#disk {
+    color: #f9e2af;
+}
+
+#temperature {
+    color: #a6e3a1;
+}
+
+#window {
+    color: #89dceb
+}
+
+#custom-lock_screen, #custom-updates, #clock, #custom-power_btn {
+    color: #89b4fa
+}
+
+#pulseaudio {
     color: #cba6f7;
     border-left: 0px;
     border-right: 0px;
 }
 
-#battery {
-    color: #a6e3a1;
+#pulseaudio.microphone {
+    color: #a189fa;
     border-left: 0px;
+    border-right: 0px;
 }
