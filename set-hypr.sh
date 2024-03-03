@@ -91,8 +91,11 @@ else
     read -n1 -rep $'[\e[1;33mACTION\e[0m] - Would you like to install paru (y,n) ' INSTPARU
     if [[ $INSTPARU == "Y" || $INSTPARU == "y" ]]; then
         git clone https://aur.archlinux.org/paru-git.git &>> $INSTLOG
+        echo -e "$COK - cloned paru git"
         cd paru-git || exit
+        echo -e "$COK - entered paru dir"
         makepkg -si --noconfirm &>> ../$INSTLOG
+        echo -e "$COK - makepkg paru.."
         cd ..
 
     else
